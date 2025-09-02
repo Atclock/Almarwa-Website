@@ -97,7 +97,7 @@
     justify-content: center;
     text-align: left;
     color: white;
-    background: url('https://businessafricaonline.com/wp-content/uploads/2018/09/crude-oil.jpg') no-repeat center center/cover;
+    background: url('Images/FactoryItSelf.jpg') no-repeat center center/cover;
     background-size: cover;
 }
 .hero::after {
@@ -345,11 +345,68 @@ section {
 }
 
 .services {
-    background-color: #e0e0e0;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
 }
 
-.contact {
-    background-color: #dcdcdc;
+.services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/ABunchOfOilRefinedOil.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter:blur(8px);
+    z-index: -1;
+}
+
+.services::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card p {
+    color: #333;
+    font-size: 16px;
 }
 
 /* Footer */
@@ -362,28 +419,33 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 html, body {
     scroll-snap-type: y mandatory;
     overflow: auto; 
 }
-section {
-    scroll-snap-align: start;
-    height: 100vh;
+
+.contact {
+background-color: #dcdcdc;
 }
+
 .contact-section {
     padding: 80px 0;
     background-color: #f9f9f9;
 }
+
 .contact-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 50px;
 }
+
 .contact-info {
     flex: 3;
     margin-right: 375px;
 }
+
 .quote-form {
     flex: 1;
     background: white;
@@ -391,22 +453,23 @@ section {
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .form-group {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
 }
+
 .form-group input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border 0.3s ease-in-out;
 }
+
 .form-group input:focus {
     border-color: #9fd72c;
     outline: none;
 }
+
 .quote-btn {
     width: 100%;
     padding: 12px;
@@ -418,6 +481,28 @@ section {
     transition: 0.3s ease-in-out;
     font-size: 16px;
 }
+
 .quote-btn:hover {
     transform: scale(1.05);
+}
+
+/*Responsive decisions */
+@media screen and (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
 }
