@@ -22,6 +22,9 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="Index-ar.html">AR</a>
+            <img src="Images/PNG/Green_globe.png" alt="Globe" class="lang">
+          </li>
         </ul>
     </nav>
 
@@ -45,7 +48,7 @@
            
             <div class="slide fade">
                 <div class="overlay"></div>
-                <img src="Images/FactoryItSelf.jpg" alt="Slide 1">
+                <img src="Images/IndustrialFuelMixingPoint.jpg" alt="Slide 1">
                 <div class="caption">
                     <h2>Industrial Fuel:</h2>
                     <p> - To ensure a healthy environment and longer lifespan for factory burners with increased performance. <br></br>- We manufacture industrial fuel according 
@@ -119,55 +122,78 @@
                     </section>
 
 
-                <!-- Contact Info Section -->
-                <div class="contact-info">
-                    <h2>Contact Us</h2>
-                    <p><strong>Phone:</strong> 0797899938 • 0795554160 • 0790604022</p>
-                    <p><strong>Email:</strong> Info@almarwaoil.com</p>
-                    <p><strong>Address:</strong> Jordan-Mafraq • Thuraya Industrial Development City</p>
-                </div>
-                <!-- Map Embed -->
-                  <div class="mapouter" style="position:relative; text-align:right; width:100%; height:300px; margin-top:20px;">
-                     <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:100%; height:100%;">
-                         <iframe width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                         src="https://www.google.com/maps/embed/v1/place?q=%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D8%AB%D8%B1%D9%8A%D8%A7%20%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%88%D9%8A%D8%A9&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"> 
-                        </iframe> 
-                    </div>
-                 </div> 
-                </div>
-                
-<!-- Request a Quote Section --> 
- <div class="quote-form">
-     <h2>Request a Quote</h2> 
-     <form id="quoteForm"> <div class="form-group">
-         <input type="text" name="first_name" placeholder="First Name*" id="firstName" required>
-         <input type="text" name="last_name" placeholder="Last Name*" id="lastName" required>
-         </div>
+                <section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-wrapper">
+
+      <!-- Left Box: Contact Info + Map -->
+      <div class="contact-box contact-info">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> 0797899938 • 0795554160 • 0790604022</p>
+        <p><strong>Email:</strong> Info.almarwaoil.com</p>
+        <p><strong>Address:</strong> Jordan - Mafraq • Thuraya Industrial Development City</p>
+
+        <!-- Google Map -->
+        <div class="mapouter" style="position:relative; width:100%; height:250px; margin-top:20px;">
+          <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:100%; height:100%;">
+            <iframe
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed/v1/place?q=%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D8%AB%D8%B1%D9%8A%D8%A7%20%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%88%D9%8A%D8%A9&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Box: Request a Quote -->
+       <div id="formError" class="error"></div>
+      <div class="contact-box quote-form">
+        <h2>Request a Quote</h2>
+        <form id="quoteForm">
           <div class="form-group">
-             <input type="text" name="company" placeholder="Company*" id="company" required>
-              <input type="email" name="email" placeholder="Email*" id="email" required>
-             </div>
-              <div class="form-group">
-                 <input type="text" name="area" placeholder="Area / Country Code" id="areaCode" required>
-                  <input type="text" name="phone" placeholder="Phone Number" id="phoneNumber" required>
-                 </div>
-                  <div class="form-group">
-                     <input type="text" name="product" placeholder="Product Name*" id="productName" required>
-                     </div>
-                      <div class="form-group">
-                         <input type="text" name="grade" placeholder="Grade / Purity / Type (Optional)" id="gradePurityType">
-                          <input type="text" name="quantity" placeholder="Quantity Required (Optional)" id="quantityRequired">
-                         </div>
-                          <div class="form-group">
-                             <input type="text" name="website" placeholder="Website (Optional)" id="website">
-                             </div>
-                              <button type="submit" class="quote-btn">Request a Quote</button>
-                             </form>
-                             </div>
-                             </div>
-                             </div>
-                             </section>
-    
+    <input type="text" name="first_name" placeholder="First Name*" id="firstName" required>
+  <span class="error" id="firstNameError"></span>
+  <input type="text" name="last_name" placeholder="Last Name*" id="lastName" required>
+  <span class="error" id="lastNameError"></span>
+</div>
+
+<div class="form-group">
+  <input type="text" name="company" placeholder="Company*" id="company" required>
+  <span class="error" id="companyError"></span>
+  <input type="email" name="email" placeholder="Email*" id="email" required>
+  <span class="error" id="emailError"></span>
+</div>
+
+<div class="form-group">
+  <input type="text" name="area" placeholder="Area / Country Code" id="areaCode" required>
+  <span class="error" id="areaError"></span>
+  <input type="text" name="phone" placeholder="Phone Number*" id="phoneNumber" required>
+  <span class="error" id="phoneError"></span>
+</div>
+
+<div class="form-group">
+  <input type="text" name="product" placeholder="Product Name*" id="productName" required>
+  <span class="error" id="productError"></span>
+</div>
+
+          <div class="form-group">
+            <input type="text" name="grade" placeholder="Grade / Purity / Type (Optional)" id="gradePurityType">
+            <input type="text" name="quantity" placeholder="Quantity Required (Optional)" id="quantityRequired">
+          </div>
+          <div class="form-group">
+            <input type="text" name="website" placeholder="Website (Optional)" id="website">
+          </div>
+          <button type="submit" class="quote-btn">Request a Quote</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer>

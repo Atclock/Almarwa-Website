@@ -486,6 +486,84 @@ background-color: #dcdcdc;
     transform: scale(1.05);
 }
 
+.error {
+  color: red;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+
+/* Contact Section Layout */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* Aligns everything to the left */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Each box (info + map) and (form) */
+.contact-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1;
+  max-width: 500px; /* Controls size of each box */
+}
+
+/* Desktop Layout */
+@media screen and (min-width: 769px) {
+  .contact-wrapper {
+    flex-direction: row; /* Side by side */
+    align-items: flex-start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-info .mapouter {
+    order: -1; /* Map above info */
+  }
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+  }
+
+  .contact-box {
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .contact-info .mapouter {
+    order: 0;
+  }
+
+  .contact-info {
+    order: 1;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .quote-form {
+    order: 2;
+  }
+    .navbar ul li:not(:last-child) {
+    display: none;
+  }
+
+}
+
+
 /*Responsive decisions */
 @media screen and (max-width: 768px) {
   .app-container {
@@ -505,4 +583,55 @@ background-color: #dcdcdc;
   .navbar {
     padding: 10px;
   }
+}
+
+
+.lang {
+  width: 30px;
+  height: auto;
+  border-radius: 3px; /* optional: make it look nice */
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+}
+
+.lang:hover {
+  transform: scale(1.1);
+}
+
+
+
+[dir="rtl"] .hero-header {
+    left: auto;
+    right: 30px;
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-text {
+    text-align: right;
+    align-items: flex-end;
+}
+
+/* Only affect text, not layout */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] p,
+[dir="rtl"] .caption,
+[dir="rtl"] .subtitle,
+[dir="rtl"] .company-name,
+[dir="rtl"] .hero-header,
+[dir="rtl"] .hero-text {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .hero-text {
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+[dir="rtl"] .hero-header {
+    display: flex;
+    justify-content: flex-end;
 }

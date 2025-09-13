@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المروة</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Images\almarwasd.png">
+
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="Images\almarwasd.png" alt="Company Logo" class="nav-logo">
+            <span class="nav-company-name">المروة</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+            <li><a href="Index.html">EN</a>
+            <img src="Images/PNG/Green_globe.png" alt="Globe" class="lang">
+          </li>
+        </ul>
+    </nav>
+
+    <!--Hero Section-->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-header">
+                <div class="hero-text">
+                    <span class="company-name">المروة</span>
+                    <p><span class="subtitle">شركة أردنية مبتكرة متخصصة في تصنيع الزيوت المعدنية والوقود الصناعي</span></p>
+                    <a href="#about" class="btn">المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About Us Section-->
+    <section id="about" class="about">
+        <div class="slideshow-container">
+           
+            <div class="slide fade">
+                <div class="overlay"></div>
+                <img src="Images/IndustrialFuelMixingPoint.jpg" alt="Slide 1">
+                <div class="caption">
+                    <h2>الوقود الصناعي:</h2>
+                    <p> - لضمان بيئة صحية وعمر أطول لمشعلات المصانع مع زيادة الأداء. <br></br>- نحن نصنع الوقود الصناعي وفقًا لأفضل المواصفات والمعايير الأردنية، والتي تم تحديدها على أنها (JS2277:2021). علاوة على ذلك، تمتلك شركة المروة لتصنيع وتكرير الزيوت المعدنية ترخيصًا لإنتاج الوقود الصناعي من هيئة تنظيم الطاقة والمعادن الأردنية.</p>
+                </div>
+            </div>
+        
+           
+            <div class="slide fade">
+                <div class="overlay"></div>
+                <img src="Images/LaboratoryCloser.jpg" alt="Slide 2">
+                <div class="caption">
+                    <h2>لماذا نحن؟<br></br></h2>
+                    <p>- نسبة اللزوجة مناسبة لتمديد عمر أجزاء الموقد. <br></br>
+                    - القيمة الحرارية العالية تساعد على توفير استهلاك الوقود. <br><br>
+                    - نقطة الوميض المناسبة للتشغيل ضمن درجات حرارة وظروف جوية متنوعة. <br></br>
+                    - محتوى الكبريت ضمن المستويات المسموح بها عالميًا وبيئيًا أو أقل منها <br></br>
+                    - خالية تمامًا من الرطوبة (0.00%)، مما يعزز كفاءة الاحتراق ويحمي مكونات نظام الوقود. <br></br>
+                    - كل طلب يخضع لاختبارات جودة الديزل لضمان الموثوقية.
+                    </p>
+                </div>
+            </div>
+        
+            
+            <div class="slide fade">
+                <div class="overlay"></div>
+                <img src="Images/Trucks.jpg">
+                <div class="caption">
+                    <h2>خدمة التوصيل</h2>
+                    <p>- أسطول توزيع يغطي جميع مناطق المملكة على مدار الساعة. <br></br>
+                    - التوصيل في غضون 24 ساعة كحد أقصى من الطلب. <br></br>
+                    - مركبات النقل الخاصة بالشركة مخصصة ومرخصة لنقل المنتجات البترولية.
+                </p>
+                </div>
+            </div>
+        
+            
+            <a id="arrow" class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a id="arrow" class="next" onclick="changeSlide(1)">&#10095;</a>
+        
+            
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+         <h2>خدماتنا</h2>
+          <div class="services-container">
+             <div class="service-card">
+                 <h3>تصنيع الزيوت المعدنية</h3>
+                  <p>زيوت معدنية عالية الجودة تُنتج بدقة لتلبية احتياجات التطبيقات الصناعية المختلفة.</p> </div>
+                   <div class="service-card">
+                     <h3>تزويد الوقود الصناعي</h3>
+                      <p>إنتاج مرخص يتوافق مع JS2277:2021 ومختبر لأداء احتراق من الدرجة الأولى.</p>
+                     </div>
+                      <div class="service-card">
+                         <h3>مراقبة الجودة والاختبار</h3>
+                          <p>كل دفعة تخضع لاختبارات معملية صارمة لضمان تلبية معايير الموثوقية والأداء.</p> </div>
+                           <div class="service-card"> 
+                            <h3>خدمة التوصيل السريع</h3>
+                             <p>تغطية توصيل على مدار الساعة طوال أيام الأسبوع في جميع أنحاء الأردن مع مركبات نقل بترولية مرخصة ومخصصة.</p> 
+                            </div> 
+                        </div> 
+                    </section>
+
+
+                <section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-wrapper">
+
+      <!-- Left Box: Contact Info + Map -->
+      <div class="contact-box contact-info">
+        <h2>تواصل معنا</h2>
+        <p><strong>الهاتف:</strong> 0797899938 • 0795554160 • 0790604022</p>
+        <p><strong>البريد الإلكتروني:</strong> Info.almarwaoil.com</p>
+        <p><strong>العنوان:</strong> الأردن - المفرق • مدينة الثريا الصناعية التنموية</p>
+
+        <!-- Google Map -->
+        <div class="mapouter" style="position:relative; width:100%; height:250px; margin-top:20px;">
+          <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:100%; height:100%;">
+            <iframe
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed/v1/place?q=%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D8%AB%D8%B1%D9%8A%D8%A7%20%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%88%D9%8A%D8%A9&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Box: Request a Quote -->
+      <div class="contact-box quote-form">
+        <h2>طلب عرض سعر</h2>
+        <form id="quoteForm">
+          <div class="form-group">
+            <input type="text" name="first_name" placeholder="الاسم الأول*" id="firstName" required>
+            <input type="text" name="last_name" placeholder="الاسم الأخير*" id="lastName" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="company" placeholder="اسم الشركة*" id="company" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني*" id="email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="area" placeholder="رمز المنطقة / الدولة" id="areaCode" required>
+            <input type="text" name="phone" placeholder="رقم الهاتف" id="phoneNumber" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="product" placeholder="اسم المنتج*" id="productName" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="grade" placeholder="الدرجة / النقاء / النوع (اختياري)" id="gradePurityType">
+            <input type="text" name="quantity" placeholder="الكمية المطلوبة (اختياري)" id="quantityRequired">
+          </div>
+          <div class="form-group">
+            <input type="text" name="website" placeholder="الموقع الإلكتروني (اختياري)" id="website">
+          </div>
+          <button type="submit" class="quote-btn">طلب عرض سعر</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Almarwa. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

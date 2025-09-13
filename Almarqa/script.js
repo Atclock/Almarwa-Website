@@ -53,7 +53,7 @@ if (prevButton && nextButton) {
 }
 
 
-setInterval(nextSlide, 15000);
+setInterval(nextSlide, 150000);
 
 
 showSlide(slideIndex);
@@ -63,38 +63,82 @@ showSlide(slideIndex);
 // Form submission handling
 document.getElementById("quoteForm").addEventListener("submit", async function(event) {
     event.preventDefault();
-    
+
+    // Clear previous error messages
+    document.querySelectorAll(".error").forEach(e => e.textContent = "");
+
+    // Grab values
+    let firstName = document.getElementById("firstName").value.trim();
+    let lastName = document.getElementById("lastName").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phoneNumber = document.getElementById("phoneNumber").value.trim();
+
+    let valid = true;
+
+    // Client-side validation
+    if (!/^[a-zA-Z]+$/.test(firstName)) {
+        document.getElementById("firstNameError").textContent = "First name must only contain letters.";
+        valid = false;
+    }
+    if (!/^[a-zA-Z]+$/.test(lastName)) {
+        document.getElementById("lastNameError").textContent = "Last name must only contain letters.";
+        valid = false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        valid = false;
+    }
+    if (!/^\d{7,15}$/.test(phoneNumber)) {
+        document.getElementById("phoneError").textContent = "Phone number must be 7–15 digits.";
+        valid = false;
+    }
+
+    if (!valid) return;
+
+    // Prepare form data
     let formData = {
-        firstName: document.getElementById("firstName").value,
-        lastName: document.getElementById("lastName").value,
-        company: document.getElementById("company").value,
-        email: document.getElementById("email").value,
-        area: document.getElementById("areaCode").value,
-        phoneNumber: document.getElementById("phoneNumber").value,
-        productName: document.getElementById("productName").value,
-        gradePurityType: document.getElementById("gradePurityType").value || "N/A",
-        quantityRequired: document.getElementById("quantityRequired").value || "N/A",
-        website: document.getElementById("website").value || "N/A"
+        firstName,
+        lastName,
+        company: document.getElementById("company").value.trim(),
+        email,
+        area: document.getElementById("areaCode").value.trim(),
+        phoneNumber,
+        productName: document.getElementById("productName").value.trim(),
+        gradePurityType: document.getElementById("gradePurityType").value.trim() || "N/A",
+        quantityRequired: document.getElementById("quantityRequired").value.trim() || "N/A",
+        website: document.getElementById("website").value.trim() || "N/A"
     };
 
     try {
         let response = await fetch("http://localhost:8080/api/quotes", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Cache-Control": "no-cache",
-                "pragma": "no-cache",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(formData)
         });
 
-        if (response.ok) {
-            alert("Your request has been submitted successfully!");
-        } else {
-            alert("Something went wrong. Please try again.");
+        let result = await response.json();
+
+        if (result.status === "success") {
+            alert(result.message);
+            document.getElementById("quoteForm").reset();
+        } else if (result.status === "error") {
+            // Generic error from backend → show on top OR assign based on message
+            let msg = result.message.toLowerCase();
+
+            if (msg.includes("first name")) document.getElementById("firstNameError").textContent = result.message;
+            else if (msg.includes("last name")) document.getElementById("lastNameError").textContent = result.message;
+            else if (msg.includes("email")) document.getElementById("emailError").textContent = result.message;
+            else if (msg.includes("phone")) document.getElementById("phoneError").textContent = result.message;
+            else if (msg.includes("product")) document.getElementById("productError").textContent = result.message;
+            else document.getElementById("formError").textContent = result.message;
+
         }
     } catch (error) {
         console.error("Error submitting form:", error);
         alert("There was an error. Please try again later.");
     }
 });
+
+
